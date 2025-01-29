@@ -27,7 +27,7 @@ const Button = ({
     return (
         <button
             className={twMerge(clsx(`
-                w-full px-3 py-2 border border-gray-300 
+                px-3 py-2 border border-gray-300 
                 rounded-md focus:outline-none focus:border-blue-500 
                 bg-blue-500 text-white hover:bg-blue-600
                 transition duration-200 ease-in-out min-w-28
