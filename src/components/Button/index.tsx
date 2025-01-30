@@ -4,6 +4,7 @@ import { twMerge } from 'tailwind-merge';
 type ButtonPropsBase = {
     onClick?: () => void;
     variant?: 'primary' | 'secondary';
+    fullWidth?: boolean;
 };
 
 type ButtonWithLabel = ButtonPropsBase & {
@@ -22,7 +23,8 @@ const Button = ({
     onClick, 
     label,
     children,
-    variant = 'primary'
+    variant = 'primary',
+    fullWidth,
  }: ButtonProps) => {
     return (
         <button
@@ -34,7 +36,7 @@ const Button = ({
             `, variant === 'secondary' && `
                 bg-white text-gray-900 border-gray-300
                 hover:bg-gray-100
-            `))}
+            `, fullWidth && 'w-full'))}
             onClick={onClick}
         >
             {label || children}

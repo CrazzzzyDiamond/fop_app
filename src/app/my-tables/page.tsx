@@ -1,9 +1,6 @@
 'use client'
 
 import { useState } from 'react';
-import Paper from '@/components/Paper';
-import Button from '@/components/Button';
-import { Table, TableCell, TableHeadCell } from '@/components/Table';
 import {
     createColumnHelper,
     flexRender,
@@ -12,6 +9,11 @@ import {
     getSortedRowModel,
     SortingState,
   } from '@tanstack/react-table'
+
+import Paper from '@/components/Paper';
+import Button from '@/components/Button';
+import { Table, TableCell, TableHeadCell } from '@/components/Table';
+import Dialog from '@/components/Dialog';
 
 type MyTable = {
     name: string;
@@ -71,7 +73,8 @@ const columns = [
 
 const MyTablesPage = () => {
     const [myTables] = useState(TABLES_MOCK_DATA);
-    const [sorting, setSorting] = useState<SortingState>([])
+    const [sorting, setSorting] = useState<SortingState>([]);
+    const [newTableDialogOpen, setNewTableDialogOpen] = useState(false);
 
     const table = useReactTable<MyTable>({
         data: myTables,
@@ -90,7 +93,9 @@ const MyTablesPage = () => {
         <Paper>
             <div className="flex justify-between items-center">
                 <h1 className="text-2xl font-bold">My Tables</h1>
-                <Button>
+                <Button
+                    onClick={() => setNewTableDialogOpen(true)}
+                >
                     Create Table
                 </Button>
             </div>
@@ -131,6 +136,13 @@ const MyTablesPage = () => {
                     </tbody>
                 </Table>
             </div>
+
+            {newTableDialogOpen && (
+                <Dialog
+                    onClose={() => setNewTableDialogOpen(false)}
+                    onConfirm={() => {}}
+                />
+            )}
         </Paper>
     )
 }

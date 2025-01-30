@@ -21,6 +21,7 @@ const LoginPage = () => {
             <Button
                 label="Sign In"
                 onClick={() => console.log('Sign In')}
+                fullWidth
             />
             <div className="
                 text-center mt-4 text-blue-500 cursor-pointer hover:underline

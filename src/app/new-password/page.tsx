@@ -23,6 +23,7 @@ const LoginPage = () => {
             <Button
                 label="Confirm"
                 onClick={() => console.log('Sign In')}
+                fullWidth
             />
         </div>
     )
