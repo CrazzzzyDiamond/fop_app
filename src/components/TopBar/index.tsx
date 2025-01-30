@@ -14,15 +14,11 @@ const TopBar = () => {
                 </Link>
 
                 <div className="grid grid-cols-2 gap-4">
-                    <Button>
-                        <Link href="/sign-in">
-                            Login
-                        </Link>
+                    <Button linkTo="/sign-in" variant="secondary">
+                        Login
                     </Button>
-                    <Button variant="secondary">
-                        <Link href="/sign-up">
-                            Sign Up
-                        </Link>
+                    <Button linkTo="/sign-up" variant="secondary">
+                        Sign Up
                     </Button>
                 </div>
             </div>
