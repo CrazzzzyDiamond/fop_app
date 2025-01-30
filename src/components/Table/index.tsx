@@ -1,5 +1,4 @@
-import { clsx } from 'clsx';
-import { twMerge } from 'tailwind-merge';
+import cn from '@/utils/cn';
 
 interface TableProps {
     children: React.ReactNode;
@@ -22,9 +21,9 @@ export const TableHeadCell = ({
 } : TableHeadProps) => {
     return (
         <th 
-            className={twMerge(clsx(`
+            className={cn(`
                 text-left px-4 py-2 border-b transition
-            `, canSort && `cursor-pointer hover:bg-gray-100`))}
+            `, canSort && `cursor-pointer hover:bg-gray-100`)}
             onClick={onClick}
         >
             {children}

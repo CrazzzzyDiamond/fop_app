@@ -1,5 +1,4 @@
-import { clsx } from 'clsx';
-import { twMerge } from 'tailwind-merge';
+import cn from '@/utils/cn';
 
 type ButtonPropsBase = {
     onClick?: () => void;
@@ -28,7 +27,7 @@ const Button = ({
  }: ButtonProps) => {
     return (
         <button
-            className={twMerge(clsx(`
+            className={cn(`
                 px-3 py-2 border border-gray-300 
                 rounded-md focus:outline-none focus:border-blue-500 
                 bg-blue-500 text-white hover:bg-blue-600
@@ -36,7 +35,7 @@ const Button = ({
             `, variant === 'secondary' && `
                 bg-white text-gray-900 border-gray-300
                 hover:bg-gray-100
-            `, fullWidth && 'w-full'))}
+            `, fullWidth && 'w-full')}
             onClick={onClick}
         >
             {label || children}
