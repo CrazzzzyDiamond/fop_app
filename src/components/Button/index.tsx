@@ -7,6 +7,7 @@ type ButtonPropsBase = {
     variant?: 'primary' | 'secondary';
     fullWidth?: boolean;
     linkTo?: string;
+    className?: string;
 };
 
 type ButtonWithLabel = ButtonPropsBase & {
@@ -28,6 +29,7 @@ const Button = ({
     variant = 'primary',
     fullWidth,
     linkTo,
+    className,
  }: ButtonProps) => {
     const classes = cn(`
         px-3 py-2 border border-gray-300 inline-block text-center
@@ -37,7 +39,8 @@ const Button = ({
     `, variant === 'secondary' && `
         bg-white text-gray-900 border-gray-300
         hover:bg-gray-100
-    `, fullWidth && 'w-full')
+    `, fullWidth && 'w-full',
+    className);
 
     if (linkTo) {
         return (
