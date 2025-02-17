@@ -8,7 +8,7 @@ import {
     useReactTable,
     getSortedRowModel,
     SortingState,
-  } from '@tanstack/react-table'
+  } from '@tanstack/react-table';
   import { useRouter } from 'next/navigation'
 
 import Paper from '@/components/Paper';
@@ -108,8 +108,6 @@ const MyTablesPage = () => {
             sorting,
           },
     })
-
-    
 
     return (
         <Paper className="max-w-full">

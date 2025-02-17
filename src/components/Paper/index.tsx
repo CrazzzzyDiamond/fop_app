@@ -12,7 +12,7 @@ const Paper = ({
     return (
         <div 
             className={cn(`
-                p-4 bg-white shadow-md rounded-md
+                p-8 bg-white shadow-md rounded-md
             `, className)}
         >
             {children}

@@ -6,9 +6,9 @@ interface TableProps {
 
 export const Table = ({ children } : TableProps) => {
     return (
-        <div className="block max-w-full overflow-x-scroll overflow-y-hidden">
+        <div className="block max-w-full overflow-x-auto overflow-y-hidden">
             <table 
-                className="w-full border"
+                className="w-full"
             >
                 {children}
             </table>
@@ -30,7 +30,7 @@ export const TableHeadCell = ({
     return (
         <th 
             className={cn(`
-                    text-left px-4 py-2 border-b transition
+                    text-left px-4 py-4 border-b transition
                 `, 
                 canSort && `cursor-pointer hover:bg-gray-100`
             )}
@@ -55,7 +55,7 @@ export const TableCell = ({
     return (
         <td 
             className={cn(`
-                border-b px-4 py-2
+                border-b px-4 py-4
                 `, onClick && `cursor-pointer hover:bg-gray-100`,
                 className
             )}
