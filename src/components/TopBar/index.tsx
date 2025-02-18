@@ -4,7 +4,7 @@ import Button from '@/components/Button';
 
 const TopBar = () => {
     return (
-        <div className="bg-white p-4 shadow-md fixed top-0 left-0 w-full z-10">
+        <div className="bg-white p-4 shadow-md fixed top-0 left-0 w-full z-20">
             <div className="container mx-auto flex justify-between items-center">
                 <Link 
                     href="/"

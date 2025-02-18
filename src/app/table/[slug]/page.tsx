@@ -2,6 +2,8 @@ import Paper from '@/components/Paper';
 import TotalTable from '@/components/TotalTable';
 import IncomesTable from '@/components/IncomesTable';
 
+import IncomesTopBar from './IncomesTopBar';
+
 export default async function Page({
   params,
 }: {
@@ -13,11 +15,21 @@ export default async function Page({
 
   return (
     <div>
+      <div className="mb-5">
+        <IncomesTopBar />
+      </div>
       <div className="flex">
-        <div className="sticky mr-5">
-          <Paper>
-            <TotalTable />
-          </Paper>
+        <div className="mr-5">
+          <div 
+            className="sticky z-10"
+            style={{
+              top: '90px',
+            }}
+          >
+            <Paper>
+              <TotalTable />
+            </Paper>
+          </div>
         </div>
         <div>
           <Paper>
