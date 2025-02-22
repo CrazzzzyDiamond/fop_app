@@ -7,8 +7,8 @@
   --foreground: #171717;
   --blue: #0070f3;
   --blue-hover: #0366d6;
-  --grey: #797f8b;
-  --grey-hover: #6c737c;
+  --grey: #c0c5cf;
+  --grey-hover: #aaafb9;
 }
 
 @media (prefers-color-scheme: dark) {

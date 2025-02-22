@@ -1,0 +1,32 @@
+.tableWrapper {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.tableHeadCell {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid var(--grey);
+    transition: background-color 0.3s ease;
+}
+
+.tableHeadCellWithSort {
+    cursor: pointer;
+}
+
+.tableHeadCellWithSort:hover {
+    background-color: var(--grey);
+    color: #fff;
+}
+
+.tableCell {
+    padding: 12px;
+    border-bottom: 1px solid var(--grey);
+}

@@ -1,4 +1,5 @@
-import cn from '@/utils/cn';
+import { clsx } from 'clsx';
+import s from './paper.module.css';
 
 interface PaperProps {
     children: React.ReactNode;
@@ -13,9 +14,11 @@ const Paper = ({
 }: PaperProps) => {
     return (
         <div 
-            className={cn(`
-                p-6 bg-white shadow-md rounded-md
-            `, variant === 'densed' && 'pt-4 pb-4', className)}
+            className={clsx(
+                s.paper,
+                variant === 'densed' && s.paperDensed,
+                className,
+            )}
         >
             {children}
         </div>

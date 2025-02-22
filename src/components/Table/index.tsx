@@ -1,4 +1,5 @@
-import cn from '@/utils/cn';
+import { clsx } from 'clsx';
+import s from './table.module.css';
 
 interface TableProps {
     children: React.ReactNode;
@@ -6,9 +7,9 @@ interface TableProps {
 
 export const Table = ({ children } : TableProps) => {
     return (
-        <div className="block max-w-full overflow-x-auto overflow-y-hidden">
+        <div className={s.tableWrapper}>
             <table 
-                className="w-full"
+                className={s.table}
             >
                 {children}
             </table>
@@ -29,10 +30,9 @@ export const TableHeadCell = ({
 } : TableHeadProps) => {
     return (
         <th 
-            className={cn(`
-                    text-left px-4 py-4 border-b transition
-                `, 
-                canSort && `cursor-pointer hover:bg-gray-100`
+            className={clsx(
+                s.tableHeadCell,
+                canSort && s.tableHeadCellWithSort,
             )}
             onClick={onClick}
         >
@@ -54,11 +54,7 @@ export const TableCell = ({
 } : TableCellProps) => {
     return (
         <td 
-            className={cn(`
-                border-b px-4 py-4
-                `, onClick && `cursor-pointer hover:bg-gray-100`,
-                className
-            )}
+            className={clsx(s.tableCell, className)}
             onClick={onClick}
         >
             {children}
