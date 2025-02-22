@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         <Topbar />
 
-        <div className="layout-container bg-slate-400">
+        <div className="layout-container">
           {children}
         </div>
 

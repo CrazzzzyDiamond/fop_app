@@ -54,11 +54,9 @@ const IncomesTable = () => {
                 columnHelper.display( {
                     id: 'actions',
                     cell: () => (
-                        <div>
-                            <Button variant="secondary">
-                                Remove
-                            </Button>
-                        </div>
+                        <Button className="text-xl min-w-12" variant="secondary">
+                            &times;
+                        </Button>
                     )
                 }),
             ],

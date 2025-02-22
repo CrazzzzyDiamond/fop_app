@@ -29,5 +29,6 @@ body {
   justify-content: center;
   align-items: center;
   padding: 40px 20px;
+  background: linear-gradient(135deg, rgb(162, 192, 204), rgb(252, 238, 167));
   /* background: var(--foreground); */
 }

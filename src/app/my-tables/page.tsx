@@ -14,7 +14,8 @@ import {
 import Paper from '@/components/Paper';
 import Button from '@/components/Button';
 import { Table, TableCell, TableHeadCell } from '@/components/Table';
-import Dialog from '@/components/Dialog';
+
+import NewTableDialog from './NewTableDialog';
 
 type TableId = string;
 
@@ -164,10 +165,7 @@ const MyTablesPage = () => {
             </div>
 
             {newTableDialogOpen && (
-                <Dialog
-                    onClose={() => setNewTableDialogOpen(false)}
-                    onConfirm={() => {}}
-                />
+                <NewTableDialog onClose={() => setNewTableDialogOpen(false)} />
             )}
         </Paper>
     )

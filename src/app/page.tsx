@@ -34,7 +34,7 @@ export default function Home() {
           lg:w-1/3 lg:h-full
         ">
           <Image
-            src="/hero.jpeg"
+            src="/heroBg.png"
             alt="Next.js Logo"
             width={300}
             height={500}
