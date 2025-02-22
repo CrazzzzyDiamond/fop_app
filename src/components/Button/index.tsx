@@ -1,6 +1,6 @@
 import Link from 'next/link';
-
-import cn from '@/utils/cn';
+import { clsx } from 'clsx';
+import s from './button.module.css';
 
 type ButtonPropsBase = {
     onClick?: () => void;
@@ -31,16 +31,12 @@ const Button = ({
     linkTo,
     className,
  }: ButtonProps) => {
-    const classes = cn(`
-        px-3 py-2 border border-gray-300 inline-block text-center
-        rounded-md focus:outline-none focus:border-blue-500 
-        bg-blue-500 text-white hover:bg-blue-600
-        transition duration-200 ease-in-out min-w-28
-    `, variant === 'secondary' && `
-        bg-white text-gray-900 border-gray-300
-        hover:bg-gray-100
-    `, fullWidth && 'w-full',
-    className);
+    const classes = clsx(
+        s.button,
+        variant === 'secondary' && s.buttonSecondary,
+        fullWidth && s.buttonFullWidth,
+        className,
+    )
 
     if (linkTo) {
         return (

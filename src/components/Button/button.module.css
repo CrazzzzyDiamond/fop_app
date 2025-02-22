@@ -1,0 +1,33 @@
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: var(--blue);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    min-width: 120px;
+    transition: all 0.3s ease;
+    
+}
+
+.button:hover {
+    background-color: var(--blue-hover);
+}
+
+.buttonSecondary {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid var(--grey);
+}
+
+.buttonSecondary:hover {
+    background-color: var(--grey-hover);
+    background-color: #f7f7f7;
+}
+
+.buttonFullWidth {
+    width: 100%;
+}

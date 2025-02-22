@@ -5,6 +5,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --blue: #0070f3;
+  --blue-hover: #0366d6;
+  --grey: #797f8b;
+  --grey-hover: #6c737c;
 }
 
 @media (prefers-color-scheme: dark) {
