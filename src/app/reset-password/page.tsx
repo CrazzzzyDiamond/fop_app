@@ -1,17 +1,17 @@
 "use client";
 
 import Link from 'next/link';
-
+import Paper from '@/components/Paper';
 import TextInut from '@/components/TextInut';
 import Button from '@/components/Button';
 
 const LoginPage = () => {
     return (
-        <div className="w-96 bg-white p-6 rounded-lg shadow-lg">
-            <h1 className="text-3xl text-center font-semibold mt-6 mb-4">
+        <Paper className="authWrapper">
+            <h1 className="authTitle">
                 Reset Password
             </h1>
-            <p className="text-center text-md text-gray-500 mb-4">
+            <p className="authHelpText">
                 Enter the email address associated with your account, and we’ll email you a link to reset your password.
             </p>
             <TextInut
@@ -28,7 +28,7 @@ const LoginPage = () => {
             ">
                 <Link href="/sign-in">Sign In</Link>
             </div>
-        </div>
+        </Paper>
     )
 }
 

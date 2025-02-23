@@ -1,14 +1,14 @@
 "use client";
 
 import Link from 'next/link';
-
 import TextInut from '@/components/TextInut';
+import Paper from '@/components/Paper';
 import Button from '@/components/Button';
 
 const LoginPage = () => {
     return (
-        <div className="w-96 bg-white p-6 rounded-lg shadow-lg">
-            <h1 className="text-3xl text-center font-semibold mt-6 mb-8">
+        <Paper className="authWrapper">
+            <h1 className="authTitle">
                 Sign In
             </h1>
             <TextInut
@@ -23,13 +23,10 @@ const LoginPage = () => {
                 onClick={() => console.log('Sign In')}
                 fullWidth
             />
-            <div className="
-                text-center mt-4 text-blue-500 cursor-pointer hover:underline
-                display: block
-            ">
+            <div className="authLink">
                 <Link href="/sign-up">Sign Up</Link>
             </div>
-        </div>
+        </Paper>
     )
 }
 
