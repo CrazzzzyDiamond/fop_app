@@ -1,0 +1,23 @@
+.topBarWrapper {
+    margin-bottom: 20px;
+}
+
+.tablesWrapper {
+    display: flex;
+}
+
+.totalTableWrapper {
+    margin-right: 20px;
+}
+
+.totalTableSticky {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    top: 90px;
+}
+
+.topBar {
+    display: flex;
+    justify-content: space-between;
+}

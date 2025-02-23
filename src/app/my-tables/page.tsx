@@ -10,12 +10,11 @@ import {
     SortingState,
   } from '@tanstack/react-table';
   import { useRouter } from 'next/navigation'
-
 import Paper from '@/components/Paper';
 import Button from '@/components/Button';
 import { Table, TableCell, TableHeadCell } from '@/components/Table';
-
 import NewTableDialog from './NewTableDialog';
+import s from './myTables.module.css'
 
 type TableId = string;
 
@@ -72,11 +71,10 @@ const createColumnsWithEditHandler = (handleTableCellClick: (rowId: string) => v
         columnHelper.display( {
             id: 'actions',
             cell: ({row}) => (
-                <div>
+                <div className={s.tableControlButtons}>
                     <Button 
                         variant="secondary"
                         onClick={() => handleTableCellClick(row.original.id)}
-                        className="mr-2"
                     >
                         View
                     </Button>
@@ -111,58 +109,56 @@ const MyTablesPage = () => {
     })
 
     return (
-        <Paper className="max-w-full">
-            <div className="flex justify-between items-center">
-                <h1 className="text-2xl font-bold">My Tables</h1>
+        <Paper className={s.tablesPaper}>
+            <div className={s.tablesButtons}>
+                <h1 className="title">My Tables</h1>
                 <Button
                     onClick={() => setNewTableDialogOpen(true)}
                 >
                     Create Table
                 </Button>
             </div>
-            <div className="mt-4">
-                <Table>
-                    <thead>
-                        {table.getHeaderGroups().map(headerGroup => (
-                            <tr key={headerGroup.id}>
-                                {headerGroup.headers.map(header => (
-                                    <TableHeadCell 
-                                        key={header.id}
-                                        onClick={header.column.getToggleSortingHandler()}
-                                        canSort={header.column.getCanSort()}
-                                    >
-                                        {flexRender(
-                                            header.column.columnDef.header,
-                                            header.getContext()
-                                            )}
-                                            {{
-                                            asc: ' ⏶',
-                                            desc: ' ⏷',
-                                        }[header.column.getIsSorted() as string] ?? null}
-                                    </TableHeadCell>
-                                ))}
-                            </tr>
-                        ))}
-                    </thead>
-                    <tbody>
-                    {table.getRowModel().rows.map(row => (
-                        <tr key={row.id}>
-                            {row.getVisibleCells().map(cell => (
-                                <TableCell 
-                                    key={cell.id}
-                                    className="whitespace-nowrap"
+            <Table>
+                <thead>
+                    {table.getHeaderGroups().map(headerGroup => (
+                        <tr key={headerGroup.id}>
+                            {headerGroup.headers.map(header => (
+                                <TableHeadCell 
+                                    key={header.id}
+                                    onClick={header.column.getToggleSortingHandler()}
+                                    canSort={header.column.getCanSort()}
                                 >
-                                    {flexRender(cell.column.columnDef.cell, {
-                                        ...cell.getContext(),
-                                        row,
-                                    })}
-                                </TableCell>
+                                    {flexRender(
+                                        header.column.columnDef.header,
+                                        header.getContext()
+                                        )}
+                                        {{
+                                        asc: ' ⏶',
+                                        desc: ' ⏷',
+                                    }[header.column.getIsSorted() as string] ?? null}
+                                </TableHeadCell>
                             ))}
                         </tr>
+                    ))}
+                </thead>
+                <tbody>
+                {table.getRowModel().rows.map(row => (
+                    <tr key={row.id}>
+                        {row.getVisibleCells().map(cell => (
+                            <TableCell 
+                                key={cell.id}
+                                className={s.noWrapTableCell}
+                            >
+                                {flexRender(cell.column.columnDef.cell, {
+                                    ...cell.getContext(),
+                                    row,
+                                })}
+                            </TableCell>
                         ))}
-                    </tbody>
-                </Table>
-            </div>
+                    </tr>
+                    ))}
+                </tbody>
+            </Table>
 
             {newTableDialogOpen && (
                 <NewTableDialog onClose={() => setNewTableDialogOpen(false)} />

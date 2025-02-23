@@ -1,12 +1,11 @@
 'use client'
 
 import { useParams } from 'next/navigation';
-
 import Paper from '@/components/Paper';
 import TotalTable from '@/components/TotalTable';
 import IncomesTable from '@/components/IncomesTable';
-
 import IncomesTopBar from './IncomesTopBar';
+import s from './incomeTable.module.css';
 
 export default function Page() {
   const params = useParams<{ slug: string }>();
@@ -15,15 +14,12 @@ export default function Page() {
 
   return (
     <div>
-      <div className="mb-5 sticky">
+      <div className={s.topBarWrapper}>
         <IncomesTopBar />
       </div>
-      <div className="flex">
-        <div className="mr-5">
-          <div 
-            className="sticky z-10"
-            style={{ top: '90px'}}
-          >
+      <div className={s.tablesWrapper}>
+        <div className={s.totalTableWrapper}>
+          <div className={s.totalTableSticky}>
             <Paper>
               <TotalTable />
             </Paper>

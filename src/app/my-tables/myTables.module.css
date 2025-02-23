@@ -1,0 +1,19 @@
+.tablesPaper {
+    max-width: 100%;
+}
+
+.tablesButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.noWrapTableCell {
+    white-space: nowrap;
+}
+
+.tableControlButtons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}

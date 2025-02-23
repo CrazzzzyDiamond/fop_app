@@ -1,9 +1,8 @@
 import { useState } from 'react';
-
 import Paper from '@/components/Paper';
 import Button from '@/components/Button';
-
 import NewIncomeDialog from './NewIncomeDialog';
+import s from './incomeTable.module.css';
 
 const IncomesTopBar = () => {
     const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -11,7 +10,7 @@ const IncomesTopBar = () => {
     return (
         <>
             <Paper variant="densed">
-                <div className="flex justify-between">
+                <div className={s.topBar}>
                     <Button 
                         variant="secondary"
                         linkTo="/my-tables"
