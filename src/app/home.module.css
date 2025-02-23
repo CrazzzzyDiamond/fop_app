@@ -1,7 +1,7 @@
 .hero {
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 96px);
     width: 100%;
-    margin: 0 auto -40px;
+    margin: 0 auto -90px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
