@@ -8,4 +8,5 @@
 .footerContainer {
     max-width: 1400px;
     text-align: right;
+    margin: 0 auto;
 }
