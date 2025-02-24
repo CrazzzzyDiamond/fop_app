@@ -55,8 +55,7 @@
     }
 
     .heroImage {
-        object-fit: contain;
-        width: 100%;
-        max-height: 80vh;
+        height: 64vh;
+        width: auto;
     }
 }
