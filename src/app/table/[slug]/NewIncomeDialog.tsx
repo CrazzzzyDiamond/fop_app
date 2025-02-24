@@ -1,6 +1,7 @@
 import Dialog from '@/components/Dialog';
 import TextInut from '@/components/TextInut';
 import SelectInput from '@/components/SelectInput';
+import DateInput from '@/components/DateInput';
 
 interface NewIncomeDialogProps {
     onClose: () => void;
@@ -23,10 +24,11 @@ const NewIncomeDialog = ({
         >
             <>
                 <TextInut 
-                    placeholder="Enter table name"
+                    placeholder="Enter income amount"
+                    type="number"
                 />
                 <SelectInput placeholder="currency" options={CURRENCY_OPTIONS} />
-                <input type="date" min="2025-01-01" max="2025-02-22" />
+                <DateInput placeholder="date" />
             </>
         </Dialog>
     )

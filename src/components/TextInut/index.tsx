@@ -1,14 +1,15 @@
 import s from './textInput.module.css';
 
-interface TextInutProps {
+interface TextInputProps {
     placeholder: string;
     type?: string;
+    step?: number;
 }
 
-const TextInut = ({ 
+const TextInput = ({ 
     placeholder,
-    type = 'text'
- }: TextInutProps) => {
+    type = 'text',
+ }: TextInputProps) => {
     return (
         <input 
             className={s.textInput}
@@ -18,4 +19,4 @@ const TextInut = ({
     )
 }
 
-export default TextInut;
+export default TextInput;

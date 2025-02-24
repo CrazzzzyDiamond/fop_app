@@ -10,7 +10,7 @@
     cursor: pointer;
     min-width: 120px;
     transition: all 0.3s ease;
-    
+    font-size: 16px;
 }
 
 .button:hover {
@@ -20,7 +20,7 @@
 .buttonSecondary {
     background-color: #fff;
     color: #000;
-    border: 2px solid var(--grey);
+    border: 1px solid var(--grey);
 }
 
 .buttonSecondary:hover {
