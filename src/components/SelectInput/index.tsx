@@ -8,13 +8,26 @@ interface Option {
 interface SelectInputProps {
     placeholder: string;
     options: Option[];
+    value: string;
+    onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-const SelectInput = ({ options }: SelectInputProps) => {
+const SelectInput = ({ 
+    options, 
+    value, 
+    onChange,
+}: SelectInputProps) => {
     return (
-        <select className={s.selectInput}>
+        <select 
+            className={s.selectInput}
+            onChange={onChange}
+            value={value}
+        >
             {options.map((option) => (
-                <option key={option.value} value={option.value}>
+                <option 
+                    key={option.value} 
+                    value={option.value}
+                >
                     {option.label}
                 </option>
             ))}

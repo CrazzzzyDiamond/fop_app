@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react';
+import { useUser } from '@stackframe/stack';
 import {
     createColumnHelper,
     flexRender,
@@ -92,6 +93,7 @@ const MyTablesPage = () => {
     const [sorting, setSorting] = useState<SortingState>([]);
     const [newTableDialogOpen, setNewTableDialogOpen] = useState(false);
     const router = useRouter();
+    useUser({ or: 'redirect' });
 
     const handleTableCellClick = (tableId: TableId) => {
         router.push(`/table/${tableId}`);
@@ -112,9 +114,7 @@ const MyTablesPage = () => {
         <Paper className={s.tablesPaper}>
             <div className={s.tablesButtons}>
                 <h1 className="title">My Tables</h1>
-                <Button
-                    onClick={() => setNewTableDialogOpen(true)}
-                >
+                <Button onClick={() => setNewTableDialogOpen(true)} >
                     Create Table
                 </Button>
             </div>
