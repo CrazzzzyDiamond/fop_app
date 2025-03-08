@@ -8,6 +8,7 @@ type ButtonPropsBase = {
     fullWidth?: boolean;
     linkTo?: string;
     className?: string;
+    disabled?: boolean;
 };
 
 type ButtonWithLabel = ButtonPropsBase & {
@@ -30,11 +31,13 @@ const Button = ({
     fullWidth,
     linkTo,
     className,
+    disabled,
  }: ButtonProps) => {
     const classes = clsx(
         s.button,
         variant === 'secondary' && s.buttonSecondary,
         fullWidth && s.buttonFullWidth,
+        disabled && s.buttonDisabled,
         className,
     )
 
@@ -54,6 +57,7 @@ const Button = ({
         <button
             className={classes}
             onClick={onClick}
+            disabled={disabled}
         >
             {label || children}
         </button>

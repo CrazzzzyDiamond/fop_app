@@ -31,3 +31,12 @@
 .buttonFullWidth {
     width: 100%;
 }
+
+.buttonDisabled {
+    background-color: var(--grey);
+    cursor: not-allowed;
+}
+
+.buttonDisabled:hover {
+    background-color: var(--grey);
+}

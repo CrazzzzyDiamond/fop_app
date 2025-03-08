@@ -1,9 +1,17 @@
 import Link from 'next/link';
 import Button from '@/components/Button';
+import {
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs';
 
 import s from './topBar.module.css';
 
-const TopBar = () => {
+const TopBar = async () => {
+    
     return (
         <div className={s.topBar}>
             <div className={s.topBarContainer}>
@@ -15,12 +23,24 @@ const TopBar = () => {
                 </Link>
 
                 <div className={s.topBarButtons}>
-                    <Button linkTo="/sign-in" variant="secondary">
-                        Login
-                    </Button>
-                    <Button linkTo="/sign-up" variant="secondary">
-                        Sign Up
-                    </Button>
+                    <SignedOut>
+                        <SignInButton mode='modal'>
+                            <Button variant="secondary">
+                                Увійти
+                            </Button>
+                        </SignInButton>
+                        <SignUpButton mode='modal'>
+                            <Button variant="secondary">
+                                Реєстрація
+                            </Button>
+                        </SignUpButton>
+                    </SignedOut>
+                    <SignedIn>
+                    <UserButton />
+                    </SignedIn>
+                    {/* <SignInButton /> */}
+                    {/* 
+                     */}
                 </div>
             </div>
         </div>

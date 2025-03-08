@@ -8,3 +8,8 @@
 .paperDensed {
     padding: 10px;
 }
+
+.paperCenter {
+    display: flex;
+    justify-content: center;
+}

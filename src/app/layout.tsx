@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { StackProvider, StackTheme } from "@stackframe/stack";
-import { stackServerApp } from "../stack";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ClerkProvider } from '@clerk/nextjs';
 import "./globals.css";
+import { ukUA } from '@clerk/localizations'
 
 import Topbar from "../components/TopBar";
 import Footer from "../components/Footer";
@@ -28,18 +28,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased pt-16`}
-      ><StackProvider app={stackServerApp}><StackTheme>
-        <Topbar />
+    <ClerkProvider localization={ukUA}>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased pt-16`}
+        >
+          <Topbar />
 
-        <div className="layout-container">
-          {children}
-        </div>
+          <div className="layout-container">
+            {children}
+          </div>
 
-        <Footer />
-      </StackTheme></StackProvider></body>
-    </html>
+          <Footer />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

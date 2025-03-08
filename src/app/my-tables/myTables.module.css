@@ -1,5 +1,6 @@
 .tablesPaper {
     max-width: 100%;
+    min-width: 600px;
 }
 
 .tablesButtons {
@@ -17,4 +18,10 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
+}
+
+@media (max-width: 600px) {
+    .tablesPaper {
+        min-width: 100%;
+    }
 }
