@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import {
     flexRender,
     getCoreRowModel,
@@ -29,7 +29,7 @@ const MyTablesPage = () => {
     const router = useRouter();
     const { isSignedIn, isLoaded, user } = useUser();
 
-    const fetchMyTables = async () => {
+    const fetchMyTables = useCallback(async () => {
         setIsLoading(true);
         const res = await fetch('/api/tables?userId=' + user?.id)
 
@@ -42,13 +42,13 @@ const MyTablesPage = () => {
 
         setMyTables(data);
         setIsLoading(false);
-    }
+    }, [user])
 
     useEffect(() => {
         if (isSignedIn && isLoaded) {
             fetchMyTables()
         }
-    }, [isLoaded, isSignedIn, user])
+    }, [fetchMyTables, isLoaded, isSignedIn, user])
 
     
 
